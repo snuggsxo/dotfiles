@@ -1,0 +1,96 @@
+configuration {
+    font: "Figtree 13";
+    show-icons: true;
+    icon-theme: "Mint-Breeze-Light-Icons";
+    display-drun: "⋆. 𐙚˚࿔ Juicemenu 𝜗𝜚˚⋆";
+    timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+* {
+    foreground:                  rgba ( 223, 229, 237, 100 % );
+    background:                  rgba ( 29, 31, 40, 100 % );
+    blue:                        rgba ( 38, 139, 110, 100 % );
+    alternate-normal-background: rgba ( 64, 69, 82, 59 % );
+    selected-normal-background:  rgba ( 64, 82, 114, 100 % );
+    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
+    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-active-background:  rgba ( 68, 145, 237, 100 % );
+    prompt:                      rgba (183, 189, 197, 100 % );
+    normal-background:           @background;
+    normal-foreground:           @foreground;                   
+}
+
+window {
+    border-radius: 10;
+    width: 500px;
+    padding: 10px;
+}
+
+listview {
+    padding: 0px 0px 0px ;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       @normal-foreground;
+}
+
+element.alternate.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-radius: 7px;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-radius: 7px;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-radius: 7px;
+}
+
+scrollbar {
+    width:        0px;
+    border:       0px;
+    handle-color: @normal-foreground;
+    handle-width: 0px ;
+    padding:      0px;
+}
+inputbar {
+    orientation: vertical;
+    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+prompt {
+    padding:    0px 10px 0px 10px;
+}
+
+textbox-prompt-colon {
+    str: "";
+}
+
+entry {
+    padding: 3px 10px 3px 10px;
+    border: 1px;
+    border-radius: 7px;
+    background-color: @alternate-normal-background;
+}
+
