@@ -19,7 +19,7 @@ configuration {
     foreground:                  rgba ( 223, 229, 237, 100 % );
     background:                  rgba ( 29, 31, 40, 100 % );
     blue:                        rgba ( 38, 139, 110, 100 % );
-    alternate-normal-background: rgba ( 64, 69, 82, 59 % );
+    alternate-normal-background: rgba ( 23, 25, 34, 59 % );
     selected-normal-background:  rgba ( 64, 82, 114, 100 % );
     selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
     selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
