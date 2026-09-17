@@ -3,6 +3,7 @@ configuration {
 	fixed-num-lines: true;
     show-icons: false;
     display-drun: "𑣲⋆";
+	drun-display-format: "{name}";
 
   timeout {
       action: "kb-cancel";
@@ -87,7 +88,9 @@ element.selected.active {
 
 inputbar {
     padding: 0px -4px 12px 0px;
+    children:   [ prompt,textbox-prompt-colon,horibox,case-indicator ];
 }
+
 
 prompt {
     padding: 5px 0px 0px 0px;
@@ -97,12 +100,29 @@ textbox-prompt-colon {
     str: "";
 }
 
-entry {
-    hide-cursor-on-empty: true; 
-    padding:              5px 5px 5px 5px;
+horibox {
+    orientation:          horizontal;
+    padding:              4px 8px;
     border:               2px;
     border-color:         @border;
     border-radius:        5px;
     background-color:     @alternate-normal-background;
+    children:             [ icon,entry ];
+}
+
+entry {
+    hide-cursor-on-empty: true; 
+    padding:              0px;
+    border:               0px;
+    border-color:         @border;
+    border-radius:        0px;
+    background-color:     @invisible;
+}
+
+icon {
+    padding:  0px 3px 0px 0px;
+    expand:   false;
+    filename: "icon.png";
+    size:     13px;
 }
 
