@@ -1,9 +1,10 @@
 configuration {
     font: "Figtree 13";
-    show-icons: true;
-    icon-theme: "Mint-Breeze-Light-Icons";
-    display-drun: "⋆. 𐙚˚࿔ Juicemenu 𝜗𝜚˚⋆";
-    timeout {
+	fixed-num-lines: true;
+    show-icons: false;
+    display-drun: "𑣲⋆";
+
+  timeout {
       action: "kb-cancel";
       delay:  0;
   }
@@ -17,14 +18,16 @@ configuration {
 
 * {
     foreground:                  rgba ( 223, 229, 237, 100 % );
-    background:                  rgba ( 29, 31, 40, 100 % );
+    background:                  rgba ( 24, 26, 36, 90 % );
+    border:                      rgba ( 40, 40, 48, 100 %);
+    invisible:                   rgba (0, 0, 0, 0%);
     blue:                        rgba ( 38, 139, 110, 100 % );
-    alternate-normal-background: rgba ( 23, 25, 34, 59 % );
-    selected-normal-background:  rgba ( 64, 82, 114, 100 % );
+    alternate-normal-background: rgba ( 20, 22, 33, 50 % );
+    selected-normal-background:  rgba ( 235, 255, 255, 70 % );
     selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
-    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-urgent-foreground:  rgba ( 232, 162, 208, 100 % );
     selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
-    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-active-foreground:  rgba ( 232, 162, 208, 100 % );
     selected-active-background:  rgba ( 68, 145, 237, 100 % );
     prompt:                      rgba (183, 189, 197, 100 % );
     normal-background:           @background;
@@ -32,55 +35,62 @@ configuration {
 }
 
 window {
-    border-radius: 10;
-    width: 500px;
-    padding: 10px;
+    border:        2px;
+    border-color:  @border;
+    border-radius: 5;
+    width:         380px;
+    padding:       15px;
 }
 
 listview {
-    padding: 0px 0px 0px ;
+    border:       2px 0px 0px;
+    border-color: @border;
+    lines:        8;
+    padding:      15px 0px 0px ;
+    scrollbar:    false;
+}
+
+element {
+    background-color: @invisible;
+    padding: 10px;
 }
 
 element-text {
-    background-color: inherit;
-    text-color:       @normal-foreground;
+    background-color: @invisible;
+    text-color:       inherit;
+}
+
+element.normal.normal {
+    background-color: @invisible;
 }
 
 element.alternate.normal {
-    background-color: @normal-background;
+    background-color: @invisible;
     text-color:       @normal-foreground;
 }
 
 element.selected.normal {
     background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-    border-radius: 7px;
+    text-color:       @background;
+    border-radius:    5px;
 }
 element.selected.urgent {
-    background-color: @selected-urgent-background;
-    text-color:       @selected-urgent-foreground;
-    border-radius: 7px;
+    background-color: @selected-normal-background;
+    text-color:       @background;
+    border-radius:    5px;
 }
 element.selected.active {
-    background-color: @selected-active-background;
-    text-color:       @selected-active-foreground;
-    border-radius: 7px;
+    background-color: @selected-normal-background;
+    text-color:       @background;
+    border-radius:    5px;
 }
 
-scrollbar {
-    width:        0px;
-    border:       0px;
-    handle-color: @normal-foreground;
-    handle-width: 0px ;
-    padding:      0px;
-}
 inputbar {
-    orientation: vertical;
-    children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    padding: 0px -4px 12px 0px;
 }
 
 prompt {
-    padding:    0px 10px 0px 10px;
+    padding: 5px 0px 0px 0px;
 }
 
 textbox-prompt-colon {
@@ -88,9 +98,10 @@ textbox-prompt-colon {
 }
 
 entry {
-    padding: 3px 10px 3px 10px;
-    border: 1px;
-    border-radius: 7px;
+    padding:          5px 5px 5px 5px;
+    border:           2px;
+    border-color:     @border;
+    border-radius:    5px;
     background-color: @alternate-normal-background;
 }
 
