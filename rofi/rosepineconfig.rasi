@@ -20,7 +20,7 @@ configuration {
 * {
     foreground:                  rgba ( 230, 229, 230, 100 % );
     background:                  rgba ( 28, 26, 41, 90 % );
-    border:                      rgba ( 40, 40, 48, 100 %);
+    border:                      rgba ( 38, 36, 51, 100 %);
     invisible:                   rgba (0, 0, 0, 0%);
     blue:                        rgba ( 38, 139, 110, 100 % );
     alternate-normal-background: rgba ( 20, 22, 33, 50 % );
