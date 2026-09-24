@@ -1,0 +1,133 @@
+configuration {
+  font: "Figtree 13";
+	fixed-num-lines: false;
+  show-icons: false;
+	drun-display-format: "{name}";
+	sidebar-mode: false;
+	max-history-size: 25;
+  display-drun: "";
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+
+* {
+    foreground:                  rgba ( 223, 229, 237, 100 % );
+    background:                  rgba ( 24, 26, 36, 90 % );
+    border:                      rgba ( 40, 40, 48, 100 %);
+    invisible:                   rgba (0, 0, 0, 0%);
+    blue:                        rgba ( 38, 139, 110, 100 % );
+    alternate-normal-background: rgba ( 20, 22, 33, 50 % );
+    selected-normal-background:  rgba ( 235, 255, 255, 70 % );
+    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
+    selected-urgent-foreground:  rgba ( 232, 162, 208, 100 % );
+    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
+    selected-active-foreground:  rgba ( 232, 162, 208, 100 % );
+    selected-active-background:  rgba ( 68, 145, 237, 100 % );
+    prompt:                      rgba (183, 189, 197, 100 % );
+    normal-background:           @background;
+    normal-foreground:           @foreground;                   
+}
+
+window {
+    border:           0px;
+    border-radius:    10px;
+    background-color: @background;
+    width:            800px;
+    padding:          0px 0px -2px 0px;
+    margin:           0px;
+    location:         center;
+    anchor:           north;
+    y-offset:         -20px;
+    children:         [ inputbar, mainbox ];
+}
+
+mainbox {
+    children: [ listview ];
+}
+
+listview {
+    require-input: true;
+    border:        0px;
+    border-color:  @border;
+    lines:         4;
+    padding:       5px 5px 7px 5px;
+    scrollbar:     false;
+}
+
+element {
+    background-color: @invisible;
+    padding: 10px;
+}
+
+element-text {
+    background-color: @invisible;
+    text-color:       inherit;
+}
+
+element.normal.normal {
+    background-color: @invisible;
+}
+
+element.alternate.normal {
+    background-color: @invisible;
+    text-color:       @normal-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @background;
+    border-radius:    10px;
+}
+element.selected.urgent {
+    background-color: @selected-normal-background;
+    text-color:       @background;
+    border-radius:    10px;
+}
+element.selected.active {
+    background-color: @selected-normal-background;
+    text-color:       @background;
+    border-radius:    10px;
+}
+
+inputbar {
+    padding: 0px -4px 0px 0px;
+    children:   [ horibox,case-indicator ];
+}
+
+textbox-prompt-colon {
+    str: "";
+}
+
+horibox {
+    orientation:          horizontal;
+    padding:              8px 8px;
+    border:               2px;
+    border-color:         @border;
+    border-radius:        10px;
+    background-color:     @alternate-normal-background;
+    children:             [ icon,entry ];
+}
+
+entry {
+    hide-cursor-on-empty: true; 
+    padding:              0px;
+    border:               0px;
+    border-color:         @border;
+    border-radius:        0px;
+    background-color:     @invisible;
+}
+
+icon {
+    padding:  0px 3px 0px 0px;
+    expand:   false;
+    filename: "icon.png";
+    size:     16px;
+}
