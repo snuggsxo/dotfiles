@@ -1,11 +1,11 @@
 configuration {
-    font: "Figtree 13";
-	  fixed-num-lines: false;
-    show-icons: false;
-	  drun-display-format: "{name}";
-	  sidebar-mode: false;
-	  max-history-size: 25;
-    display-drun: "";
+	font: 				 "Figtree 13";
+	fixed-num-lines: 	 false;
+    show-icons: 		 false;
+	drun-display-format: "{name}";
+	sidebar-mode: 		 false;
+	max-history-size: 	 25;
+    display-drun:		 "";
     timeout {
         action: "kb-cancel";
         delay:  0;
